@@ -5,11 +5,11 @@ import CaseModule2.service.StaffService;
 import CaseModule2.views.ViewStaff;
 
 public class ControllerStaff {
-    public static void menuManager() {
+    public static void menuManagerUser() {
         ViewStaff viewStaff = new ViewStaff();
         StaffService staffService = new StaffService();
          while (true) {
-             int choice = viewStaff.menu();
+             int choice = viewStaff.menuUser();
              switch (choice) {
                  case 1:
                      int choiceAdd = viewStaff.menuAdd();
@@ -35,7 +35,14 @@ public class ControllerStaff {
                  case 4:
                      viewStaff.show(staffService.findAll());
                      break;
+                 case 5:
+                     return;
              }
          }
     }
-}
+    public static void menuManagerAdmin() {
+        ViewStaff viewStaff = new ViewStaff();
+        while (true) {
+            int choice = viewStaff.menuAdmin();
+    }
+}}

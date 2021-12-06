@@ -11,11 +11,20 @@ import java.util.Scanner;
 public class ViewStaff {
     Scanner scanner = new Scanner(System.in);
 
-    public int menu(){
+    public int menuUser(){
         System.out.println("1. Them");
         System.out.println("2. Sua");
         System.out.println("3. Xoa");
         System.out.println("4. Show");
+        System.out.println("5. Dang xuat");
+        return Integer.parseInt(scanner.nextLine());
+    }
+
+    public int menuAdmin(){
+        System.out.println("1. Sua Account");
+        System.out.println("2. Xoa Account");
+        System.out.println("3. Show Account");
+        System.out.println("4. Dang xuat");
         return Integer.parseInt(scanner.nextLine());
     }
     public int menuAdd(){

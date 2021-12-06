@@ -25,6 +25,7 @@ public class AccountService {
     public List<Account> findAll() {
         return accounts;
     }
+
      public boolean login(Account account) {
          for (Account acc: accounts) {
              if (acc.getUserName().equals(account.getUserName()) && acc.getPassWord().equals(account.getPassWord())) {
@@ -34,4 +35,10 @@ public class AccountService {
          }
          return false;
      }
+    public boolean loginAdmin(Account account) {
+            if ("admin".equals(account.getUserName()) && "admin".equals(account.getPassWord())) {
+                return true;
+            }
+        return false;
+    }
 }

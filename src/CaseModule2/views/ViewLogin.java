@@ -12,7 +12,6 @@ public class ViewLogin {
           System.out.println("2. Dang Ky");
           return Integer.parseInt(scanner.nextLine());
       }
-
       public Account createAccount() {
           System.out.println("Nhap UserName");
           String userName = scanner.nextLine();

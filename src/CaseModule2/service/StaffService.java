@@ -19,11 +19,13 @@ public class StaffService {
        ReadAndWriteStaff.writeStaff(staffs);
     }
     public List<Staff> findAll() {
-       return staffs;
+        ReadAndWriteStaff.writeStaff(staffs);
+        return staffs;
     }
 
     public void delete(int index) {
         staffs.remove(index);
+        findAll();
     }
     public void edit(int index, Staff staff) {
         staffs.set(index, staff);
