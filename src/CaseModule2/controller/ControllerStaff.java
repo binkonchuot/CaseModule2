@@ -8,30 +8,56 @@ public class ControllerStaff {
     public static void menuManagerUser() {
         ViewStaff viewStaff = new ViewStaff();
         StaffService staffService = new StaffService();
-         while (true) {
+        int index;
+        while (true) {
              String choice = viewStaff.menuUser();
              switch (choice) {
                  case "1":
                      add(viewStaff, staffService);
                      break;
                  case "2":
-                     int index = staffService.findIndexByName(viewStaff.inputName());
-                    if (index != -1) {
-                        if (staffService.findAll().get(index) instanceof FullTimeStaff) {
-                           staffService.edit(index, viewStaff.createStaff(true));
-                        } else {
-                            staffService.edit(index, viewStaff.createStaff(false));
-                        }
-                    }
+                     int count=0;
+                     while (true) {
+                         index = staffService.findIndexByName(viewStaff.inputName());
+                         count++;
+                         if (index != -1) {
+                             if (staffService.findAll().get(index) instanceof FullTimeStaff) {
+                                 staffService.edit(index, viewStaff.createStaff(true));
+                             } else {
+                                 staffService.edit(index, viewStaff.createStaff(false));
+                             }
+                         }
+                         break;
+                     }
+                    break;
                  case "3":
-                     index = staffService.findIndexByName(viewStaff.inputName());
-                      staffService.delete(index);
-                      break;
+                     count = 0;
+                     while (true) {
+                         index = staffService.findIndexByName(viewStaff.inputName());
+                         count++;
+                         if (index == -1) {
+                             System.err.println("No find Name!");
+                             if (count==3){
+                                 System.out.println("****************************************");
+                                 System.err.println("**    Nhập sai 3 lần, mời nhập lại!   **");
+                                 break;
+                             }
+                         } else {
+                             staffService.delete(index);
+                             System.out.println("****************************************");
+                             System.err.println("**             Đã xóa xong!           **");
+                             break;
+                         }
+                     }
+                     break;
                  case "4":
                      viewStaff.show(staffService.findAll());
                      break;
                  case "5":
                      return;
+                 default:
+                     System.out.println("****************************************");
+                     System.err.println("**     Yêu cầu nhập đúng lựa chọn!    **");
              }
           }
     }

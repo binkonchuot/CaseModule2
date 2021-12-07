@@ -15,33 +15,33 @@ public class ViewStaff {
     Scanner scanner = new Scanner(System.in);
 
     public String menuUser(){
-        System.out.println("****************************************");
-        System.out.println("**         1. Thêm nhân viên          **");
-        System.out.println("**         2. Sửa nhân viên           **");
-        System.out.println("**         3. Xóa nhân viên           **");
-        System.out.println("**         4. Hiển Thị nhân viên      **");
-        System.out.println("**         5. Thoát chương trình      **");
-        System.out.println("**             #Mời Chọn#             **");
-        System.out.println("****************************************");
+        System.out.println("************************************************");
+        System.out.println("**             # Mời Lựa Chọn #               **");
+        System.out.println("**             1. Thêm nhân viên              **");
+        System.out.println("**             2. Sửa nhân viên               **");
+        System.out.println("**             3. Xóa nhân viên               **");
+        System.out.println("**             4. Hiển thị nhân viên          **");
+        System.out.println("**             5. Thoát chương trình          **");
+        System.out.println("************************************************");
         return scanner.nextLine();
     }
 
     public int menuAdmin(){
-        System.out.println("***************************************************");
-        System.out.println("**               1. Sửa Account                  **");
-        System.out.println("**               2. Xóa Account                  **");
-        System.out.println("**               3. Show Account                 **");
-        System.out.println("**               4. Đăng xuất                    **");
-        System.out.println("**                  #Mời Chọn#                   **");
-        System.out.println("***************************************************");
+        System.out.println("************************************************");
+        System.out.println("**              # Mời Lựa Chọn #              **");
+        System.out.println("**               1. Sửa Account               **");
+        System.out.println("**               2. Xóa Account               **");
+        System.out.println("**               3. Show Account              **");
+        System.out.println("**               4. Log Out                   **");
+        System.out.println("************************************************");
         return Integer.parseInt(scanner.nextLine());
     }
     public String menuAdd(){
-        System.out.println("****************************************");
-        System.out.println("**    1. Thêm nhân viên FullTime      **");
-        System.out.println("**    2. Thêm nhân viên PartTime      **");
-        System.out.println("**             #Mời Chọn#             **");
-        System.out.println("****************************************");
+        System.out.println("************************************************");
+        System.out.println("**               #Mời Lựa Chọn#               **");
+        System.out.println("**         1. Thêm nhân viên FullTime         **");
+        System.out.println("**         2. Thêm nhân viên PartTime         **");
+        System.out.println("************************************************");
         return scanner.nextLine();
     }
 
@@ -104,12 +104,12 @@ public class ViewStaff {
             String age = scanner.nextLine();
             int tuoi = Integer.parseInt(age);
             if (tuoi < 18 || tuoi > 50) {
-                System.err.println("Yêu cầu số tuổi đúng quy định từ 18 - 50!");
+                System.err.println("Quy định tuổi từ 18 - 50!");
                 return validateNumber();
             }
             return tuoi;
         } catch (Exception e) {
-            System.err.println("Mời nhập số!");
+            System.err.println("Yêu cầu nhập số!");
             return validateNumber();
         }
     }
@@ -118,7 +118,7 @@ public class ViewStaff {
             String luongTime = scanner.nextLine();
             int luong = Integer.parseInt(luongTime);
             if (luong < 1000 ) {
-                System.err.println("Nhập số tiền > 1000 VND!");
+                System.err.println("Quy định tiền > 1000 VND!");
                 return validateLuongHours();
             }
             return luong;
@@ -136,7 +136,7 @@ public class ViewStaff {
         if (matcher.matches()) {
             return regex;
         } else {
-            System.err.println("Vui lòng nhập số và đủ dãy số điện thoại !");
+            System.err.println(" Số điện thoại bắt đầu số 0 và < 13 số! ");
             regex=validatePhone();
         }
         return regex;
@@ -145,43 +145,35 @@ public class ViewStaff {
         try {
             String coefficients = scanner.nextLine();
             double heSoLuong = Double.parseDouble(coefficients);
-            if (heSoLuong < 0 || heSoLuong > 10) {
-                System.err.println(" Yêu cầu Hệ Số Lương đúng quy định từ 1.0 - 10.0! ");
+            if (heSoLuong < 0 || heSoLuong >= 10) {
+                System.err.println(" Quy định Hệ Số Lương từ 0.1 - 10.0! ");
                 return validateHeSoLuong();
             }
             return heSoLuong;
         } catch (Exception e) {
-            System.err.println("Mời nhập số!");
+            System.err.println("Yêu cầu nhập số!");
             return validateHeSoLuong();
         }
     }
     public String validateGender() {
-        String gender = scanner.nextLine();
-        switch (gender) {
-            case "Nam":
-            case "Nữ":
-            case "NAM":
-            case "NỮ":
-            case "nam":
-            case "nữ":
-                return gender;
-            default:
-                System.err.println("Mời nhập lại đúng ký tự chữ và có dấu!");
-                validateGender();
+        while (true) {
+            String gender = scanner.nextLine();
+            if (gender.equalsIgnoreCase("nam")) return "Nam";
+            if (gender.equalsIgnoreCase("nu")||gender.equalsIgnoreCase("nữ")) return "Nữ";
+            System.err.println("Quy định nhập chữ Nam hoặc Nữ!");
         }
-        return null;
     }
     private double validateGioLam() {
         try {
             String timeWork = scanner.nextLine();
             double gioLam = Double.parseDouble(timeWork);
             if (gioLam < 0 ) {
-                System.err.println("Vui lòng nhập lại!");
+                System.err.println("Yêu cầu nhập lại!");
                 return validateGioLam();
             }
             return gioLam;
         } catch (Exception e) {
-            System.err.println("VUI LONG NHAP SO!");
+            System.err.println("Yêu cầu nhập số!");
             return validateGioLam();
         }
     }

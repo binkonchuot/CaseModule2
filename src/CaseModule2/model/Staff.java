@@ -23,7 +23,6 @@ public class Staff implements Serializable {
         this.phone = phone;
         this.gender = gender;
         this.address = address;
-//        this.luongTong = luongTong;
         this.luongTime = luongTime;
         this.hours = hours;
     }
@@ -85,14 +84,14 @@ public class Staff implements Serializable {
     @Override
     public String toString() {
         return
-                "Name = " + name + " " +
-                ", Age = " + age + " " +
-                ", PhoneNumber = " + phone + " " +
-                ", Gender = " + gender + " " +
-                ", Address = " + address + "\n" +
-                ", Trạng thái làm việc = " + status + " " +
-                ", Hours Work = " + hours + " " +
-                ", Lương theo giờ = " + luongTime + " VND " + " " +
-                ", Tổng Lương = " + getLuongtong() + " VND ";
+                "Name = " + name + "" +
+                ", Age = " + age + "" +
+                ", PhoneNumber = " + phone + "" +
+                ", Gender = " + gender + ",\n" +
+                " Address = " + address + "" +
+                ", Status = " + status + "" +
+                ", WorkingTime = " + hours + "h" +
+                ", HourlyIncome = " + luongTime + " VND" + "" +
+                ", Salary = " + getLuongtong() + " VND";
     }
 }

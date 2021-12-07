@@ -25,7 +25,7 @@ public class FullTimeStaff extends Staff {
 
     @Override
     public String toString() {
-        return "FullTimeStaff{" + super.toString() + "," +
-                "Hệ số lương =" + coefficients +"}" ;
+        return "---> FullTimeStaff { " + super.toString() + "," +
+                "Hệ số lương =" + coefficients + "}" ;
     }
 }

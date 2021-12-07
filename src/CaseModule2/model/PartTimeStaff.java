@@ -13,6 +13,6 @@ public class PartTimeStaff extends Staff {
 
     @Override
     public String toString() {
-        return "PartTimeStaff{" + super.toString()+ "}";
+        return "---> PartTimeStaff { " + super.toString()+ "}";
     }
 }
