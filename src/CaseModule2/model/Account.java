@@ -10,15 +10,6 @@ public class Account implements Serializable {
 
     public Account() {
     }
-//
-//    public int getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(int role) {
-//        this.role = role;
-//    }
-
     public Account(String userName, String passWord) {
         this.userName = userName;
         this.passWord = passWord;

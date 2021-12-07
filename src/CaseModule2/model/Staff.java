@@ -16,15 +16,16 @@ public class Staff implements Serializable {
     public Staff() {
     }
 
-    public Staff(String name, int age, String phone, String gender,
-                 String address, int luongTime) {
+    public Staff(String name, int age, String phone, String gender, String address,
+                 double luongTong, int luongTime, double hours) {
         this.name = name;
         this.age = age;
         this.phone = phone;
         this.gender = gender;
         this.address = address;
+        this.luongTong = luongTong;
         this.luongTime = luongTime;
-//        this.luongTong = this.luongTime*hours;
+        this.hours = hours;
     }
 
     public String getName() {
@@ -65,7 +66,7 @@ public class Staff implements Serializable {
         this.status = status;
     }
     public double getLuongtong() {
-        return luongTong;
+        return luongTong=luongTime*hours;
     }
     public int getLuongTime() {
         return luongTime;
@@ -89,9 +90,9 @@ public class Staff implements Serializable {
                 ", gender='" + gender + '\'' +
                 ", address='" + address + '\'' +
                 ", status=" + status +
-                ", luongtong=" + luongTong +
                 ", luongTime=" + luongTime +
                 ", hours=" + hours +
+                ", luongtong=" + luongTong +
                 '}';
     }
 }

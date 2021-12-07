@@ -32,6 +32,9 @@ public class ControllerStaff {
                         }
                     }
                  case 3:
+                     index = staffService.findIndexByName(viewStaff.inputName());
+                      staffService.delete(index);
+                      break;
                  case 4:
                      viewStaff.show(staffService.findAll());
                      break;

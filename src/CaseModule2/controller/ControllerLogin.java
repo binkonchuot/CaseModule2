@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ControllerLogin {
     public static void menuLogin() {
-//        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         ViewLogin viewLogin = new ViewLogin();
         AccountService accountService = new AccountService()
 ;        while (true) {

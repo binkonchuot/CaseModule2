@@ -3,12 +3,13 @@ package CaseModule2.model;
 public class FullTimeStaff extends Staff {
     private double coefficients;
 
-
-    public FullTimeStaff(String name, int age, String phone, String gender,
-                         String address, int luongTime, double coefficients) {
-        super(name, age, phone, gender, address, luongTime);
+    public FullTimeStaff(double coefficients) {
         this.coefficients = coefficients;
+    }
 
+    public FullTimeStaff(String name, int age, String phone, String gender, String address, double luongTong, int luongTime, double hours, double coefficients) {
+        super(name, age, phone, gender, address, luongTong, luongTime, hours);
+        this.coefficients = coefficients;
     }
     public double getCoefficients() {
         return coefficients;

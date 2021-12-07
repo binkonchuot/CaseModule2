@@ -8,14 +8,16 @@ public class ViewLogin {
       Scanner scanner = new Scanner(System.in);
 
       public int menuLogin() {
-          System.out.println("1. Dang Nhap");
-          System.out.println("2. Dang Ky");
+          System.out.println("****************************************");
+          System.out.println("**      1. Login    2. Register       **");
+//          System.out.println("**                        **");
+          System.out.println("****************************************");
           return Integer.parseInt(scanner.nextLine());
       }
       public Account createAccount() {
-          System.out.println("Nhap UserName");
+          System.out.println("Input UserName");
           String userName = scanner.nextLine();
-          System.out.println("Nhap PassWord");
+          System.out.println("Input PassWord");
           String passWord = scanner.nextLine();
           return new Account(userName,passWord);
       }

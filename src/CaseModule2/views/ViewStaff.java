@@ -3,7 +3,6 @@ package CaseModule2.views;
 import CaseModule2.model.FullTimeStaff;
 import CaseModule2.model.PartTimeStaff;
 import CaseModule2.model.Staff;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.List;
 import java.util.Scanner;
@@ -12,53 +11,63 @@ public class ViewStaff {
     Scanner scanner = new Scanner(System.in);
 
     public int menuUser(){
-        System.out.println("1. Them");
-        System.out.println("2. Sua");
-        System.out.println("3. Xoa");
-        System.out.println("4. Show");
-        System.out.println("5. Dang xuat");
+        System.out.println("****************************************");
+        System.out.println("**         1. Thêm nhân viên          **");
+        System.out.println("**         2. Sửa nhân viên           **");
+        System.out.println("**         3. Xóa nhân viên           **");
+        System.out.println("**         4. Hiển Thị nhân viên      **");
+        System.out.println("**         5. Thoát chương trình      **");
+        System.out.println("**             #Mời Chọn#             **");
+        System.out.println("****************************************");
         return Integer.parseInt(scanner.nextLine());
     }
 
     public int menuAdmin(){
-        System.out.println("1. Sua Account");
-        System.out.println("2. Xoa Account");
-        System.out.println("3. Show Account");
-        System.out.println("4. Dang xuat");
+        System.out.println("***************************************************");
+        System.out.println("**               1. Sửa Account                  **");
+        System.out.println("**               2. Xóa Account                  **");
+        System.out.println("**               3. Show Account                 **");
+        System.out.println("**               4. Đăng xuất                    **");
+        System.out.println("**                  #Mời Chọn#                   **");
+        System.out.println("***************************************************");
         return Integer.parseInt(scanner.nextLine());
     }
     public int menuAdd(){
-        System.out.println("1. Them Nhan Vien FullTime ");
-        System.out.println("2. Them Nhan Vien PartTime");
+        System.out.println("****************************************");
+        System.out.println("**    1. Thêm nhân viên FullTime      **");
+        System.out.println("**    2. Thêm nhân viên PartTime      **");
+        System.out.println("**             #Mời Chọn#             **");
+        System.out.println("****************************************");
         return Integer.parseInt(scanner.nextLine());
     }
 
     public String inputName(){
-        System.out.println("1. Nhap Name ");
+        System.out.println("1. Nhập Name ");
         return scanner.nextLine();
     }
     public Staff createStaff(boolean isFullTimeStaff) {
-        System.out.println("Nhap name");
+        System.out.println("Nhập Name: ");
         String name = scanner.nextLine();
-        System.out.println("Nhap age");
+        System.out.println("Nhập Age: ");
         int age = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhap phone");
+        System.out.println("Nhập PhoneNumber: ");
         String phone = scanner.nextLine();
-        System.out.println("Nhap gender");
+        System.out.println("Nhập Gender: ");
         String gender = scanner.nextLine();
-        System.out.println("Nhap address");
+        System.out.println("Nhập Address: ");
         String address = scanner.nextLine();
-        System.out.println("Nhap luongTime");
+        System.out.println("Nhập Lương theo giờ làm: ");
         int luongTime = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhap gio lam: ");
+        System.out.println("Nhập Số giờ làm: ");
         double hours = Double.parseDouble(scanner.nextLine());
 
+        double luongTong = 0;
         if(isFullTimeStaff) {
-            System.out.println("Nhap coefficients");
+            System.out.println("Nhập Hệ số lương");
             double coefficients = Double.parseDouble(scanner.nextLine());
-            return new FullTimeStaff(name,age,phone,gender,address,luongTime,coefficients);
+            return new FullTimeStaff(name,age,phone,gender,address,luongTong,luongTime,hours,coefficients);
         } else {
-            return new PartTimeStaff(name,age,phone,gender,address,luongTime);
+            return new PartTimeStaff(name,age,phone,gender,address,luongTong,luongTime,hours);
         }
     }
     public void show(List<Staff> staffs) {

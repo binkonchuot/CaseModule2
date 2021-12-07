@@ -5,10 +5,10 @@ public class PartTimeStaff extends Staff {
     public PartTimeStaff() {
     }
 
-    public PartTimeStaff(String name, int age, String phone, String gender,
-                         String address, int luongTime) {
-        super(name, age, phone, gender, address, luongTime);
+    public PartTimeStaff(String name, int age, String phone, String gender, String address, double luongTong, int luongTime, double hours) {
+        super(name, age, phone, gender, address, luongTong, luongTime, hours);
     }
+
 
     @Override
     public String toString() {
