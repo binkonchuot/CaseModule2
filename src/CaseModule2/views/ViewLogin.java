@@ -7,12 +7,13 @@ import java.util.Scanner;
 public class ViewLogin {
       Scanner scanner = new Scanner(System.in);
 
-      public int menuLogin() {
-          System.out.println("****************************************");
-          System.out.println("**      1. Login    2. Register       **");
-//          System.out.println("**                        **");
-          System.out.println("****************************************");
-          return Integer.parseInt(scanner.nextLine());
+      public String menuLogin() {
+          System.out.println("************************************************");
+          System.out.println("**                                            **");
+          System.out.println("**            1.Login       2.Register        **");
+          System.out.println("**                                            **");
+          System.out.println("************************************************");
+          return scanner.nextLine();
       }
       public Account createAccount() {
           System.out.println("Input UserName");

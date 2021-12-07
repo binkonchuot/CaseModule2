@@ -6,7 +6,7 @@ public class Account implements Serializable {
 
     private String userName;
     private String passWord;
-//    private int role;  //phan quyen
+
 
     public Account() {
     }

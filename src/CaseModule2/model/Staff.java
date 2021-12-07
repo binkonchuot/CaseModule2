@@ -17,13 +17,13 @@ public class Staff implements Serializable {
     }
 
     public Staff(String name, int age, String phone, String gender, String address,
-                 double luongTong, int luongTime, double hours) {
+                  int luongTime, double hours) {
         this.name = name;
         this.age = age;
         this.phone = phone;
         this.gender = gender;
         this.address = address;
-        this.luongTong = luongTong;
+//        this.luongTong = luongTong;
         this.luongTime = luongTime;
         this.hours = hours;
     }
@@ -66,7 +66,8 @@ public class Staff implements Serializable {
         this.status = status;
     }
     public double getLuongtong() {
-        return luongTong=luongTime*hours;
+        luongTong=luongTime*hours;
+        return luongTong ;
     }
     public int getLuongTime() {
         return luongTime;
@@ -83,16 +84,15 @@ public class Staff implements Serializable {
 
     @Override
     public String toString() {
-        return "Staff{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", phone='" + phone + '\'' +
-                ", gender='" + gender + '\'' +
-                ", address='" + address + '\'' +
-                ", status=" + status +
-                ", luongTime=" + luongTime +
-                ", hours=" + hours +
-                ", luongtong=" + luongTong +
-                '}';
+        return
+                "Name = " + name + " " +
+                ", Age = " + age + " " +
+                ", PhoneNumber = " + phone + " " +
+                ", Gender = " + gender + " " +
+                ", Address = " + address + "\n" +
+                ", Trạng thái làm việc = " + status + " " +
+                ", Hours Work = " + hours + " " +
+                ", Lương theo giờ = " + luongTime + " VND " + " " +
+                ", Tổng Lương = " + getLuongtong() + " VND ";
     }
 }

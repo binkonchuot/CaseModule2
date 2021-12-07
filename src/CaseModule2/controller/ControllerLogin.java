@@ -8,13 +8,13 @@ import java.util.Scanner;
 
 public class ControllerLogin {
     public static void menuLogin() {
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         ViewLogin viewLogin = new ViewLogin();
-        AccountService accountService = new AccountService()
-;        while (true) {
-               int choice = viewLogin.menuLogin();
+        AccountService accountService = new AccountService();
+        while (true) {
+               String choice = viewLogin.menuLogin();
             switch (choice) {
-                case 1:
+                case "1":
                     Account account = viewLogin.createAccount();
                     if (accountService.login(account)) {
                       ControllerStaff.menuManagerUser();
@@ -25,9 +25,11 @@ public class ControllerLogin {
                         break;
                     }
                     break;
-                case 2:
+                case "2":
                     accountService.addAccount(viewLogin.createAccount());
                     break;
+                default:
+                    System.err.println("**          Mời nhập đúng lựa chọn!           **");
             }
         }
     }
