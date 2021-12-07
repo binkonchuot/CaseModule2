@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 public class ControllerLogin {
     public static void menuLogin() {
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         ViewLogin viewLogin = new ViewLogin();
         AccountService accountService = new AccountService()
 ;        while (true) {
-
                int choice = viewLogin.menuLogin();
             switch (choice) {
                 case 1:
@@ -21,7 +20,7 @@ public class ControllerLogin {
                       ControllerStaff.menuManagerUser();
                       break;
                     }
-                    if (accountService.loginAdmin(account )) {
+                    if (accountService.loginAdmin(account)) {
                         ControllerStaff.menuManagerAdmin();
                         break;
                     }
