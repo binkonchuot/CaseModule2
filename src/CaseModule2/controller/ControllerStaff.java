@@ -1,6 +1,7 @@
 package CaseModule2.controller;
 
 import CaseModule2.model.FullTimeStaff;
+import CaseModule2.model.Staff;
 import CaseModule2.service.StaffService;
 import CaseModule2.views.ViewStaff;
 
@@ -28,9 +29,17 @@ public class ControllerStaff {
                              }
                              break;
                          } else {
-                             System.err.println("Sai mmr");
-                             if (count==3) break;
+                             System.err.println("---> No find Name!");
+                             System.err.println("---> Nếu sai quá 3 lần, mời nhập lại!");
+                             if (count == 4) {
+                                 System.err.println("**        Nhập sai 3 lần, mời nhập lại!       **");
+                                 break;
+//                             } else {
+//                                 staffService.edit(index);
+//                                 System.err.println("**                 Đã sửa xong!               **");
+//                                 break;
                          }
+                     }
                      }
                     break;
                  case "3":
@@ -39,16 +48,15 @@ public class ControllerStaff {
                          index = staffService.findIndexByName(viewStaff.inputName());
                          count++;
                          if (index == -1) {
-                             System.err.println("No find Name!");
-                             if (count==3){
-                                 System.out.println("****************************************");
-                                 System.err.println("**    Nhập sai 3 lần, mời nhập lại!   **");
+                             System.err.println("---> No find Name!");
+                             System.err.println("---> Nếu sai quá 3 lần, mời nhập lại!");
+                             if (count==4){
+                                 System.err.println("**        Nhập sai 3 lần, mời nhập lại!       **");
                                  break;
                              }
                          } else {
                              staffService.delete(index);
-                             System.out.println("****************************************");
-                             System.err.println("**             Đã xóa xong!           **");
+                             System.err.println("**                 Đã xóa xong!               **");
                              break;
                          }
                      }
@@ -59,8 +67,9 @@ public class ControllerStaff {
                  case "5":
                      return;
                  default:
-                     System.out.println("****************************************");
-                     System.err.println("**     Yêu cầu nhập đúng lựa chọn!    **");
+
+                     System.err.println("**         Yêu cầu nhập đúng lựa chọn!        **");
+//                     System.out.println("************************************************");
              }
           }
     }
@@ -75,8 +84,8 @@ public class ControllerStaff {
                 staffService.save(viewStaff.createStaff(false));
                 break;
             default:
-                System.out.println("****************************************");
-                System.err.println("**     Yêu cầu nhập đúng lựa chọn!    **");
+//                System.out.println("***********************************************");
+                System.err.println("**         Yêu cầu nhập đúng lựa chọn!       **");
                 add(viewStaff,staffService);
         }
     }

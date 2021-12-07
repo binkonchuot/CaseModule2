@@ -32,10 +32,10 @@ public class AccountService {
                  return true;
              }
          }
-         System.out.println("************************************************");
+         System.out.println("                                                ");
          System.err.println("**  Account chưa đăng ký hoặc Sai thông tin   **");
          System.err.println("**               Mời Nhập lại!                **");
-         System.out.println("************************************************");
+         System.out.println("                                                ");
          return false;
      }
     public boolean loginAdmin(Account account) {

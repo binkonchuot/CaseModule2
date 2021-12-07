@@ -10,7 +10,7 @@ public class ViewLogin {
       public String menuLogin() {
           System.out.println("************************************************");
           System.out.println("**                                            **");
-          System.out.println("**            1.Login       2.Register        **");
+          System.out.println("**          1.Login        2.Register         **");
           System.out.println("**                                            **");
           System.out.println("************************************************");
           return scanner.nextLine();

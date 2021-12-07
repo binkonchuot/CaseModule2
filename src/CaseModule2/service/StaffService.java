@@ -23,7 +23,8 @@ public class StaffService {
         return staffs;
     }
 
-    public void delete(int index) {
+    public void
+    delete(int index) {
         staffs.remove(index);
         findAll();
     }

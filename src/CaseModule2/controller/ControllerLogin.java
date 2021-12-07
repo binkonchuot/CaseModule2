@@ -29,7 +29,7 @@ public class ControllerLogin {
                     accountService.addAccount(viewLogin.createAccount());
                     break;
                 default:
-                    System.err.println("**          Mời nhập đúng lựa chọn!           **");
+                    System.err.println("**         Yêu cầu nhập đúng lựa chọn!        **");
             }
         }
     }

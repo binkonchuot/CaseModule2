@@ -136,7 +136,7 @@ public class ViewStaff {
         if (matcher.matches()) {
             return regex;
         } else {
-            System.err.println(" Số điện thoại bắt đầu số 0 và < 13 số! ");
+            System.err.println(" Quy định số Phone bắt đầu bằng số 0 và có từ 10 -> 13 kí số! ");
             regex=validatePhone();
         }
         return regex;
@@ -145,8 +145,8 @@ public class ViewStaff {
         try {
             String coefficients = scanner.nextLine();
             double heSoLuong = Double.parseDouble(coefficients);
-            if (heSoLuong < 0 || heSoLuong >= 10) {
-                System.err.println(" Quy định Hệ Số Lương từ 0.1 - 10.0! ");
+            if (heSoLuong < 1.3 || heSoLuong > 9.0) {
+                System.err.println(" Quy định Hệ Số Lương áp dụng năm 2021 từ 1.3 -> 9.0! ");
                 return validateHeSoLuong();
             }
             return heSoLuong;
@@ -165,8 +165,8 @@ public class ViewStaff {
     }
     private double validateGioLam() {
         try {
-            String timeWork = scanner.nextLine();
-            double gioLam = Double.parseDouble(timeWork);
+            String hours = scanner.nextLine();
+            double gioLam = Double.parseDouble(hours);
             if (gioLam < 0 ) {
                 System.err.println("Yêu cầu nhập lại!");
                 return validateGioLam();
