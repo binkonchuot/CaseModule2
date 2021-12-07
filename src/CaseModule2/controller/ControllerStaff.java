@@ -26,8 +26,11 @@ public class ControllerStaff {
                              } else {
                                  staffService.edit(index, viewStaff.createStaff(false));
                              }
+                             break;
+                         } else {
+                             System.err.println("Sai mmr");
+                             if (count==3) break;
                          }
-                         break;
                      }
                     break;
                  case "3":

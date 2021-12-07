@@ -31,7 +31,6 @@ public class AccountService {
              if (acc.getUserName().equals(account.getUserName()) && acc.getPassWord().equals(account.getPassWord())) {
                  return true;
              }
-
          }
          System.out.println("************************************************");
          System.err.println("**  Account chưa đăng ký hoặc Sai thông tin   **");
