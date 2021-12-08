@@ -22,8 +22,7 @@ public class StaffService {
         ReadAndWriteStaff.writeStaff(staffs);
         return staffs;
     }
-    public void
-    delete(int index) {
+    public void delete(int index) {
         staffs.remove(index);
         findAll();
     }

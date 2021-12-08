@@ -26,13 +26,13 @@ public class ControllerStaff {
                              } else {
                                  staffService.edit(index, viewStaff.createStaff(false));
                              }
-                             System.err.println("**                 Đã sửa xong!               **");
+                             System.err.println("**                    Fixed!                   **");
                              break;
                          } else {
                              System.err.println("---> No find Name!");
-                             System.err.println("---> Nếu sai quá 3 lần, mời nhập lại!");
+                             System.err.println("---> Wrong more than 3 times, Please re-enter!");
                              if (count == 4) {
-                                 System.err.println("**        Nhập sai 3 lần, mời nhập lại!       **");
+                                 System.err.println("**        Enter incorrectly 3 times, Please re-enter!       **");
                                  break;
                              }
                      }
@@ -45,14 +45,14 @@ public class ControllerStaff {
                          count++;
                          if (index == -1) {
                              System.err.println("---> No find Name!");
-                             System.err.println("---> Nếu sai quá 3 lần, mời nhập lại!");
+                             System.err.println("---> Wrong more than 3 times, Please re-enter!");
                              if (count==4){
-                                 System.err.println("**        Nhập sai 3 lần, mời nhập lại!       **");
+                                 System.err.println("**        Enter incorrectly 3 times,Please re-enter!       **");
                                  break;
                              }
                          } else {
                              staffService.delete(index);
-                             System.err.println("**                 Đã xóa xong!               **");
+                             System.err.println("**                   Deleted!                 **");
                              break;
                          }
                      }
@@ -64,7 +64,7 @@ public class ControllerStaff {
                      return;
                  default:
 
-                     System.err.println("**         Yêu cầu nhập đúng lựa chọn!        **");
+                     System.err.println("**       Requires entering the correct option!      **");
              }
           }
     }
@@ -78,7 +78,7 @@ public class ControllerStaff {
                 staffService.save(viewStaff.createStaff(false));
                 break;
             default:
-                System.err.println("**         Yêu cầu nhập đúng lựa chọn!       **");
+                System.err.println("**     Requires entering the correct option!   **");
                 add(viewStaff,staffService);
         }
     }

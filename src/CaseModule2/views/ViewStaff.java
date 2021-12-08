@@ -87,7 +87,7 @@ public class ViewStaff {
      String name = scanner.nextLine();
         for (int i = 0; i < staffService.findAll().size(); i++) {
             if (staffService.findAll().get(i).getName().equalsIgnoreCase(name)) {
-            System.err.println("* Duplicate name! Pease re-enter another name *");
+            System.err.println("* Duplicate name!  Pease re-enter another name *");
             return validateName();}
         }
         return name;
