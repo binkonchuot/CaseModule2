@@ -33,13 +33,13 @@ public class ViewLogin {
     }
     public static boolean validUserName(String userName) {
         if (userName.equals("admin")) {
-            System.err.println("Not allowed to use this User name");
+            System.err.println("--> Not allowed to use this User name");
             return false;
         }
         List<Account> accountList = ReadAndWriteAccount.readAccount();
         for (int i = 0; i < accountList.size(); i++) {
             if (accountList.get(i).getUserName().equals(userName)) {
-                System.err.println("Username is duplicated!");
+                System.err.println("--> Username is duplicated!");
                 return false;
             }
         }

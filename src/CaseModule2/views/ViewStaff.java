@@ -19,9 +19,9 @@ public class ViewStaff {
         System.out.println("************************************************");
         System.out.println("**        # Please Choose from Menu #         **");
         System.out.println("**               1. Add Staff                 **");
-        System.out.println("**               2. Edit staff                **");
-        System.out.println("**               3. Delete employee           **");
-        System.out.println("**               4. Show staff                **");
+        System.out.println("**               2. Edit Staff                **");
+        System.out.println("**               3. Delete Staff              **");
+        System.out.println("**               4. Show Staff                **");
         System.out.println("**               5. Exit the program          **");
         System.out.println("************************************************");
         return scanner.nextLine();
@@ -101,7 +101,7 @@ public class ViewStaff {
         if (matcher.matches()) {
             return regex;
         } else {
-            System.err.println(" Phone numbers starting with 0 And have between 10 and 13 numbers! ");
+            System.err.println("--> Phone numbers starting with 0 And have between 10 and 13 numbers! ");
             regex=validatePhone();
         }
         return regex;
@@ -111,12 +111,12 @@ public class ViewStaff {
             String age = scanner.nextLine();
             int tuoi = Integer.parseInt(age);
             if (tuoi < 18 || tuoi > 50) {
-                System.err.println("Age regulation from 18 to 50!");
+                System.err.println("--> Age regulation from 18 to 50!");
                 return validateNumber();
             }
             return tuoi;
         } catch (Exception e) {
-            System.err.println("Requires input number!");
+            System.err.println("--> Requires input number!");
             return validateNumber();
         }
     }
@@ -125,12 +125,12 @@ public class ViewStaff {
             String luongTime = scanner.nextLine();
             int luong = Integer.parseInt(luongTime);
             if (luong < 1000 ) {
-                System.err.println("Money regulation > 1000 VND!");
+                System.err.println("--> Money regulation > 1000 VND!");
                 return validateLuongHours();
             }
             return luong;
         } catch (Exception e) {
-            System.err.println("Requires input number!");
+            System.err.println("--> Requires input number!");
             return validateLuongHours();
         }
     }
@@ -139,12 +139,12 @@ public class ViewStaff {
             String coefficients = scanner.nextLine();
             double heSoLuong = Double.parseDouble(coefficients);
             if (heSoLuong < 1.3 || heSoLuong > 9.0) {
-                System.err.println(" Regulations on Salary Coefficient applied in 2021 from 1.3 -> 9.0! ");
+                System.err.println("--> Regulations on Salary Coefficient applied in 2021 from 1.3 -> 9.0! ");
                 return validateHeSoLuong();
             }
             return heSoLuong;
         } catch (Exception e) {
-            System.err.println("Requires input number!");
+            System.err.println("--> Requires input number!");
             return validateHeSoLuong();
         }
     }
@@ -153,7 +153,7 @@ public class ViewStaff {
             String gender = scanner.nextLine();
             if (gender.equalsIgnoreCase("male")) return "Male";
             if (gender.equalsIgnoreCase("female")||gender.equalsIgnoreCase("Female")) return "Female";
-            System.err.println("Rules for entering male or female characters!");
+            System.err.println("--> Rules for entering (male) or (female) characters!");
         }
     }
     private double validateGioLam() {
@@ -161,12 +161,12 @@ public class ViewStaff {
             String hours = scanner.nextLine();
             double gioLam = Double.parseDouble(hours);
             if (gioLam < 0 ) {
-                System.err.println("Requires re-entry!");
+                System.err.println("--> Requires re-entry!");
                 return validateGioLam();
             }
             return gioLam;
         } catch (Exception e) {
-            System.err.println("Requires input number!");
+            System.err.println("--> Requires input number!");
             return validateGioLam();
         }
     }

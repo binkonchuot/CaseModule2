@@ -26,7 +26,7 @@ public class ControllerLogin {
                     accountService.addAccount(viewLogin.createAccount());
                     break;
                 default:
-                    System.err.println("**      Requires entering the correct option!      **");
+                    System.err.println("**    Requires entering the correct option!   **");
             }
         }
     }

@@ -26,7 +26,7 @@ public class ControllerStaff {
                              } else {
                                  staffService.edit(index, viewStaff.createStaff(false));
                              }
-                             System.err.println("**                    Fixed!                   **");
+                             System.err.println("**                   Fixed!                   **");
                              break;
                          } else {
                              System.err.println("---> No find Name!");
@@ -61,10 +61,10 @@ public class ControllerStaff {
                      viewStaff.show(staffService.findAll());
                      break;
                  case "5":
+                     System.err.println("**              Request Selection!            **");
                      return;
                  default:
-
-                     System.err.println("**       Requires entering the correct option!      **");
+                     System.err.println("**    Requires entering the correct option!   **");
              }
           }
     }
@@ -78,7 +78,7 @@ public class ControllerStaff {
                 staffService.save(viewStaff.createStaff(false));
                 break;
             default:
-                System.err.println("**     Requires entering the correct option!   **");
+                System.err.println("**  Requires entering the correct option! **");
                 add(viewStaff,staffService);
         }
     }
