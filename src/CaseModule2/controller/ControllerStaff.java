@@ -27,6 +27,7 @@ public class ControllerStaff {
                              } else {
                                  staffService.edit(index, viewStaff.createStaff(false));
                              }
+                             System.err.println("**                 Đã sửa xong!               **");
                              break;
                          } else {
                              System.err.println("---> No find Name!");
@@ -34,11 +35,7 @@ public class ControllerStaff {
                              if (count == 4) {
                                  System.err.println("**        Nhập sai 3 lần, mời nhập lại!       **");
                                  break;
-//                             } else {
-//                                 staffService.edit(index);
-//                                 System.err.println("**                 Đã sửa xong!               **");
-//                                 break;
-                         }
+                             }
                      }
                      }
                     break;
