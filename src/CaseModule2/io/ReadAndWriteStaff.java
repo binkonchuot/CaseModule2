@@ -1,9 +1,6 @@
 package CaseModule2.io;
 
 import CaseModule2.model.Staff;
-import org.w3c.dom.ls.LSOutput;
-
-import javax.crypto.spec.PSource;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +19,6 @@ public class ReadAndWriteStaff {
                 return (List<Staff>) objectInputStream.readObject();
             }
             return new ArrayList<>();
-
-
         } catch (Exception e) {
             e.printStackTrace();
             return null;

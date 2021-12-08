@@ -1,7 +1,6 @@
 package CaseModule2.controller;
 
 import CaseModule2.model.FullTimeStaff;
-import CaseModule2.model.Staff;
 import CaseModule2.service.StaffService;
 import CaseModule2.views.ViewStaff;
 
@@ -66,11 +65,9 @@ public class ControllerStaff {
                  default:
 
                      System.err.println("**         Yêu cầu nhập đúng lựa chọn!        **");
-//                     System.out.println("************************************************");
              }
           }
     }
-
     private static void add(ViewStaff viewStaff, StaffService staffService) {
         String choiceAdd = viewStaff.menuAdd();
         switch (choiceAdd) {
@@ -81,16 +78,9 @@ public class ControllerStaff {
                 staffService.save(viewStaff.createStaff(false));
                 break;
             default:
-//                System.out.println("***********************************************");
                 System.err.println("**         Yêu cầu nhập đúng lựa chọn!       **");
                 add(viewStaff,staffService);
         }
     }
 
-    public static void menuManagerAdmin() {
-        ViewStaff viewStaff = new ViewStaff();
-        while (true) {
-            int choice = viewStaff.menuAdmin();
-    }
-}
 }

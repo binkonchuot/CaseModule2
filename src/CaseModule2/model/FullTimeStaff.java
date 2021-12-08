@@ -6,7 +6,6 @@ public class FullTimeStaff extends Staff {
     public FullTimeStaff(double coefficients) {
         this.coefficients = coefficients;
     }
-
     public FullTimeStaff(String name, int age, String phone, String gender, String address, int luongTime, double hours, double coefficients) {
         super(name, age, phone, gender, address, luongTime, hours);
         this.coefficients = coefficients;
@@ -17,7 +16,6 @@ public class FullTimeStaff extends Staff {
     public void setCoefficients(double coefficients) {
         this.coefficients = coefficients;
     }
-
     @Override
     public double getLuongtong() {
         return (super.getLuongtong() * coefficients);
@@ -26,6 +24,6 @@ public class FullTimeStaff extends Staff {
     @Override
     public String toString() {
         return "---> FullTimeStaff { " + super.toString() + "," +
-                "Hệ số lương =" + coefficients + "}" ;
+                "Coefficients =" + coefficients + "}" ;
     }
 }
