@@ -2,7 +2,6 @@ package CaseModule2.service;
 
 import CaseModule2.io.ReadAndWriteAccount;
 import CaseModule2.model.Account;
-
 import java.util.List;
 
 public class AccountService {
@@ -22,6 +21,15 @@ public class AccountService {
     public List<Account> findAll() {
         return accounts;
     }
+    public void deleteAcc(int index) {
+        accounts.remove(index);
+        findAll();
+        ReadAndWriteAccount.writeAccount(accounts);
+    }
+    public void editAcc(int index, Account account) {
+        accounts.set(index, account);
+        ReadAndWriteAccount.writeAccount(accounts);
+    }
     public boolean login(Account account) {
         for (Account acc: accounts) {
             if (acc.getUserName().equals(account.getUserName()) && acc.getPassWord().equals(account.getPassWord())) {
@@ -37,5 +45,17 @@ public class AccountService {
             return true;
         }
         return false;
+    }
+    public int findIndexByNameAcc(String name){
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).getUserName().equals(name)) {
+                return i;
+            }
+        } return - 1;
+    }
+    public void showAcc(List<Account> accounts) {
+        for (Account d: accounts) {
+            System.out.println(d.toString());
+        }
     }
 }

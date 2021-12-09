@@ -6,6 +6,7 @@ public class Account implements Serializable {
 
     private String userName;
     private String passWord;
+
     public Account() {
     }
     public Account(String userName, String passWord) {
@@ -26,5 +27,13 @@ public class Account implements Serializable {
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                '}';
     }
 }
